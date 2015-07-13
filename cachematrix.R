@@ -34,3 +34,9 @@ cacheSolve <- function(x, ...) {
         x$setinv(cache)
         cache
 }
+## Note it supposed to return cached data only if you use special "matrix", and if assigned to variable?
+## Example os usage:
+## generate matrix (or use existing) ***************************************** z <- matrix(rnorm(16), nrow = 4)
+## create special matrix             ***************************************** sz <- makeCacheMatrix(z)
+## return inverse                    ***************************************** cacheSolve(sz)
+## all future inverses will begin with words getting cached data ************* cacheSolve(sz)
